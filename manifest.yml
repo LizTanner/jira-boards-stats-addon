@@ -1,0 +1,24 @@
+modules:
+  jira:boardAction:
+    - key: jira-boards-stats-addon-hello-world-board-action
+      title: jira-boards-stats-addon
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+      resource: main
+      render: native
+      actionType: modal
+      viewportSize: large
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs22.x
+  id: ari:cloud:ecosystem::app/1426a79c-8e71-4960-9e7e-cce636245c0f
+permissions:
+  scopes:
+    - read:board-scope:jira-software
+    - read:issue-details:jira
+    - read:jira-work
+    - read:issue-meta:jira
+    - read:issue-type:jira
+    - read:project:jira
